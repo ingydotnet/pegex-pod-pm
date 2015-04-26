@@ -1,0 +1,8 @@
+<<<cpan-head>>>
+
+= Synopsis
+
+  use Pegex::Pod;
+  my $parsed = Pegex::Pod->new->parse($pod);
+
+<<<cpan-tail>>>

@@ -1,0 +1,27 @@
+=meta: 0.0.2
+
+name: Pegex-Pod
+version: 0.27
+abstract: Pegex Parser for Pod
+homepage: http://pegex.org
+language: perl
+license: perl
+copyright: 2015
+
+author:
+  name: Ingy döt Net
+  email: ingy@cpan.org
+  homepage: http://ingy.net
+  github: ingydotnet
+  twitter: ingydotnet
+  freenode: ingy
+
+devel:
+  git: https://github.com/ingydotnet/pegex-pod-pm
+  bug: https://github.com/ingydotnet/pegex-pod-pm/issues
+  irc: irc.freenode.net#pegex
+
+requires:
+  perl: 5.8.1
+  Mo: 0
+  Pegex: 0.30
