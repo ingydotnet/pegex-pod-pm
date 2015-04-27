@@ -24,10 +24,7 @@ Pod: (
   | over-back
   | for
   | begin-end
-  | head1
-  | head2
-  | head3
-  | head4
+  | head
   | pod
   | encoding
   | cut
@@ -100,11 +97,8 @@ end: TODO #       { ^^\=end \h+ <name>  <blank-line>  }
 for: TODO #       { ^^\=for \h <name> \h+ <paragraph> }
 
 # headers
-head1:
-  / '=head1' SPACE+ / paragraph
-head2: TODO #     { ^^\=head2 \h+ <paragraph> }
-head3: TODO #     { ^^\=head3 \h+ <paragraph> }
-head4: TODO #     { ^^\=head4 \h+ <paragraph> }
+head:
+  / '=head' ([1-4]) SPACE+ / paragraph
 
 # basic formatting codes
 # TODO enable formatting within formatting
@@ -138,9 +132,14 @@ TODO: /XXX/;
 package Pegex::Pod::AST;
 use base 'Pegex::Tree';
 
-sub got_head1 {
+# sub final {
+#     use XXX;
+#     XXX @_;
+# }
+
+sub got_head {
     my ($self, $got) = @_;
-    { head1 => $got->[0]{para} };
+    { "head$got->[0]" => $got->[1]{para} };
 }
 
 sub got_paragraph {
